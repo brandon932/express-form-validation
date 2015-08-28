@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+{%for error in errors%}
+  <p>{{error}}</p>
+{%endfor %}
+
+<div class="container">
+  <h1>{{title}}</h1>
+
+  <form action="/submit" method="post">
+    <div class="form-group">
+      <label for="puppy-name">{{columnHeader1}}</label>
+      <input type="text" name="puppyName" class="form-control" id="puppieName" placeholder="name..">
+    </div>
+    <div class="form-group">
+      <label for="ID">{{columnHeader2}}</label>
+      <input type="ID" name="puppyID"class="form-control" id="puppyID" placeholder="ID..">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+
+{% endblock %}
